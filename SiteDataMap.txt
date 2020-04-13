@@ -1,0 +1,113 @@
+LMS3-Home (Book Lending Policy - Max_Days_7Days,Max_Books_3)
+STATUS = Lended/Returned
+------------------------------------------------------------------------LogIn/SignUp-----------
+---------------------------------------- DONE
+SignUp
+--- Name
+--- Phone
+--- Email
+--- Address
+--- Username
+--- Password
+- Provider Sign Up --
+--- Secret Code
+--- Name
+--- Phone
+--- Email
+--- Address
+--- Username
+--- Password
+----------------------------------------
+LogIn
+-----------------------------------------
+- Student
+--- Dashboard - [AdminMessages,NewBookArival]
+--- Profile Details            DONE
+------ Name,Phone,Add.
+------ Change Password,PhoneNo,email,add
+------ No of Books Lended
+------ No of requests
+------ Delete Account
+--- Request Book                 DONE
+------ SelectBookFromTheList,(UniqueID)
+--- My Books                    DONE
+------ Lended Books
+--- More Book Request           DONE
+------ Book Name, Author
+--- Message  
+------ Username, Message
+------------------------------------------
+- Book Provider's Portal
+--- Profile Info
+------ Change phone,email,add
+------ Delete Account
+------ Pending requests
+--- Requests from admin
+------ Delete/Finished Request
+--- Message to admin
+------ Name,Author,ISBNno,Price,Quantity -> send to ADMIN
+--------------------------------------------
+- Admin
+--- LMS Profile                      DONE
+------ No of Books
+------ No of students
+------ No of Books lended
+------ No of Book Providers
+------ No of guests Visited
+------ Change Password
+--- Add User Account                        DONE
+------ Add Book Providers
+--------- Details
+------ Add Students
+--------- Details
+--- Book Lending Service                    DONE
+------ Change the Book lending status of guests
+--------- Change Book Status on given ID
+------ Change Book lend status of student lended books
+--------- Change Book Status on given ID
+--- Book Management
+----- Request Book
+-------- BookProviderID, BookName, Quantity
+----- Requested Book Table
+-------- Delete completed requests
+----- Add Books
+-------- Name,Author,ISBNno,Price,Quantity
+----- Book List(with edit,delete Operations)
+-------- edit page (UPDATE) / update data inside Table (if possible)
+--- User Accounts                           DONE
+------ Display Users List (edit,delete)
+--- Messages
+------ Message transfer Table
+---------- Check Book Requests
+---------- Pass specific Requests to providers
+------ Incoming messages
+---------- Messages from students
+------ Incoming Providers Books
+---------- Save to database
+------ Send Messages
+---------- to students
+---------------------------------------------------------------------------------- DONE
+- Guest
+--- Name,Phone,Email,SelectBookFromTheList,(ReturnUniqueID)
+---------------------------------------------------------------------------------- DB - LMS3(Database)
+- usesrs
+--- Name,Username,Password,Phone,Email,address,acctype,id
+- guest
+--- Name,Phone,BookID,id,CheckIn,CheckOut,status
+- lin
+--- username,id,time(24hFormatl)
+- books
+--- Name,Author,ISBNno,Price,Quantity,BOOKid,id
+- book_req
+--- Username,BookName
+- book_lnd
+--- Username,bookID,checkin,checkout,status,id
+-------------------------------------------------------------------------------------
+- msgarray (user to user & admin-provider $ v.v.)
+--- FUN,msg,TUN,date,id
+- bulkstud
+--- msg,id
+- provmsg
+--- Bookname,author,quantity,id
+- provadm
+--- Name,Author,isbn,Price,Quantity,bookid,id
